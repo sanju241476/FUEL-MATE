@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Ordering System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fuel Ordering System</h1>
+        <p>Order fuel directly from your phone!</p>
+    </header>
+
+    <section class="order-form">
+        <form id="order-form">
+            <label for="fuel-type">Select Fuel Type:</label>
+            <select id="fuel-type" name="fuel-type" required>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+
+            <label for="quantity">Enter Quantity (in liters):</label>
+            <input type="number" id="quantity" name="quantity" min="1" placeholder="e.g., 10" required>
+
+            <p>Price per Liter: ₹110</p>
+            <p>Total Cost: ₹<span id="total-cost">0</span></p>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Enter your address" required></textarea>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <section id="order-summary" class="order-summary" style="display:none;">
+        <h2>Order Summary</h2>
+        <p><strong>Fuel Type:</strong> <span id="order-fuel-type"></span></p>
+        <p><strong>Quantity:</strong> <span id="order-quantity"></span> liters</p>
+        <p><strong>Total Cost:</strong> ₹<span id="order-total-cost"></span></p>
+        <p><strong>Delivery Address:</strong> <span id="order-address"></span></p>
+        <p><strong>Order Status:</strong> <span id="order-status">Order placed successfully!</span></p>
+        <button id="start-chat-button">Start Live Chat</button>
+        <button id="new-order-button">Place a New Order</button>
+    </section>
+
+    <!-- Chat Window -->
+    <section id="chat-window" class="chat-window" style="display: none;">
+        <div class="chat-header">
+            <h3>Customer Support</h3>
+            <button id="close-chat-button">Close</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Type your message..." />
+        <button id="send-chat">Send</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fuel Delivery | <a href="mailto:support@fuel.com">support@fuel.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
